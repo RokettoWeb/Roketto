@@ -1,0 +1,78 @@
+body {
+  padding: 2em; 
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  margin-bottom: 1.25em; 
+}
+
+h1 {
+  font-size: 2.25em;
+  color: #000000;
+  margin-bottom: 1em; 
+}
+
+.contenedor {
+  max-width: 37.5em;
+}
+
+.subtitulo {
+  font-size: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.caja-formulario {
+  background-color: #fff;
+  border: 1px solid #000000;
+  padding: 1.5em;
+}
+
+.fila {
+  display: flex;
+  gap: 1em;
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+label {
+  font-size: 0.9em;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  font-size: 0.9em;
+  resize: none;
+}
+
+.casilla {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1.25em;
+  font-size: 0.9em;
+  text-decoration: underline;
+}
+
+.boton-contenedor {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 0.75em 2.2em;
+  font-size: 0.9em;
+  border-radius: 1.2em;
+  border: none;
+}

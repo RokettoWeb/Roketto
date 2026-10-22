@@ -1,12 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="Contacto.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="Contacto.css">
 </head>
 <body>
-    
+
+  <header></header>
+
+  <main>
+    <h1>Contacto</h1>
+
+    <div class="contenedor">
+      <h2 class="subtitulo">¿Tienes algún proyecto en mente? ¡Pregúntanos!</h2>
+
+      <div class="caja-formulario">
+        <form>
+          <div class="fila">
+            <div class="grupo">
+              <label for="nombre">Nombre*</label>
+              <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="grupo">
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" name="apellido">
+            </div>
+          </div>
+
+          <div class="fila">
+            <div class="grupo">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email">
+            </div>
+            <div class="grupo">
+              <label for="telefono">Teléfono*</label>
+              <input type="tel" id="telefono" name="telefono">
+            </div>
+          </div>
+
+          <div class="grupo">
+            <label for="asunto">Asunto*</label>
+            <input type="text" id="asunto" name="asunto">
+          </div>
+
+          <div class="grupo">
+            <label for="mensaje">Mensaje*</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+          </div>
+
+          <div class="casilla">
+            <input type="checkbox" id="terminos" name="terminos" checked>
+            <label for="terminos">Acepto los términos y condiciones</label>
+          </div>
+
+          <div class="boton-contenedor">
+            <button type="submit">ENVIAR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
 </body>
 </html>
