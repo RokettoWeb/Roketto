@@ -21,6 +21,11 @@
 
 }
 
+.header_idioma {
+  display: flex;
+  gap: 8px;
+}
+
 .nav_lista {
     display: flex;
     flex-direction: row;
