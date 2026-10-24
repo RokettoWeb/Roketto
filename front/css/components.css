@@ -5,7 +5,7 @@
     --black: #0A0D0B;
     --white: #FFFFFF;
     --lightgrey: #F2F2F2;
-    --grey:
+    --grey: #808080;
 }
 
 .header {
@@ -17,7 +17,6 @@
   align-content: center;
   justify-content: space-between;
   gap: 1rem;
-  background-color: var(--black);
 
 }
 
@@ -61,4 +60,75 @@ header a:focus {
 
 .header_logo img {
     max-width: 48px;
+}
+
+/* EQUIPO */
+
+.article_equipo {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    height: 100%;
+}
+
+.card_equipo {
+    max-width: 400px;
+    max-height: 500px;
+    min-height: 280px;
+}
+
+.card_equipo h2,
+.card_equipo h3,
+.card_equipo h4,
+.card_equipo p {
+    margin: 0;
+    padding: 0;
+}
+
+.card_imagen {
+    width: 10em;
+    height: 10em;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.card_contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 250px;
+}
+
+ul.miembro_redes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 0.5em;
+}
+
+ul.miembro_redes li a {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5em;
+    align-items: center;
+    
+}
+
+ul.miembro_redes img {
+    width: 2em;
+    height: 2em;
 }

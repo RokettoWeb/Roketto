@@ -22,3 +22,7 @@ Roketto es una empresa de desarrollo web. Este proyecto consiste en crear su pá
 ## Objetivo
 
 Crear una web clara, atractiva y fácil de navegar que transmita la identidad de Roketto y permita a los visitantes conocer sus servicios, proyectos y equipo.
+
+## Licencia de iconos
+
+Los iconos de LinkedIn, GitHub y email (`front/assets/linkedin.svg`, `github.svg` y `email.svg`) son de [Bootstrap Icons](https://icons.getbootstrap.com/) y se usan bajo la [licencia MIT](https://github.com/twbs/icons/blob/main/LICENSE).
