@@ -167,6 +167,7 @@ footer {
     flex-wrap: wrap;
     gap: 1rem;
     background-color: var(--color-principal);
+    background-image: url(assets/footer2.png);
 }
 
 footer p {
