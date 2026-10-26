@@ -8,57 +8,79 @@
 </head>
 <body>
 
-  <header></header>
+  <header class="header">
+        <nav class="nav" aria-label="Navegación principal">
+            <ul class="nav_lista">
+                <li>
+                    <a href="index.html" class="header_logo">
+                        <img src="/front/assets/logo.png" alt="Roketto – Inicio"/>
+                    </a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
 
-  <main>
-    <h1>Contacto</h1>
+        <div class="header_idioma">
+            <label for="idioma" class="sr-only">Idioma</label>
+            <select name="idioma" id="idioma">
+                <option value="espanol" lang="es">Español</option>
+                <option value="euskera" lang="eu">Euskera</option>
+                <option value="english" lang="en">English</option>
+            </select>
+        </div>
+    </header>
 
-    <div class="contenedor">
-      <h2 class="subtitulo">¿Tienes algún proyecto en mente? ¡Pregúntanos!</h2>
+  <main class="contacto-principal">
+    <div class="contacto-centrado">
+      <h1>Contacto</h1>
 
-      <div class="caja-formulario">
-        <form>
-          <div class="fila">
-            <div class="grupo">
-              <label for="nombre">Nombre*</label>
-              <input type="text" id="nombre" name="nombre">
+      <div class="contenedor">
+        <h2 class="subtitulo">¿Tienes algún proyecto en mente? ¡Pregúntanos!</h2>
+
+        <div class="caja-formulario">
+          <form>
+            <div class="fila">
+              <div class="grupo">
+                <label for="nombre">Nombre*</label>
+                <input type="text" id="nombre" name="nombre">
+              </div>
+              <div class="grupo">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido">
+              </div>
             </div>
-            <div class="grupo">
-              <label for="apellido">Apellido</label>
-              <input type="text" id="apellido" name="apellido">
+            <div class="fila">
+              <div class="grupo">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email">
+              </div>
+              <div class="grupo">
+                <label for="telefono">Teléfono*</label>
+                <input type="tel" id="telefono" name="telefono">
+              </div>
             </div>
-          </div>
 
-          <div class="fila">
             <div class="grupo">
-              <label for="email">Email*</label>
-              <input type="email" id="email" name="email">
+              <label for="asunto">Asunto*</label>
+              <input type="text" id="asunto" name="asunto">
             </div>
+
             <div class="grupo">
-              <label for="telefono">Teléfono*</label>
-              <input type="tel" id="telefono" name="telefono">
+              <label for="mensaje">Mensaje*</label>
+              <textarea id="mensaje" name="mensaje" rows="4"></textarea>
             </div>
-          </div>
 
-          <div class="grupo">
-            <label for="asunto">Asunto*</label>
-            <input type="text" id="asunto" name="asunto">
-          </div>
+            <div class="casilla">
+              <input type="checkbox" id="terminos" name="terminos" checked>
+              <label for="terminos">Acepto los términos y condiciones</label>
+            </div>
 
-          <div class="grupo">
-            <label for="mensaje">Mensaje*</label>
-            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
-          </div>
-
-          <div class="casilla">
-            <input type="checkbox" id="terminos" name="terminos" checked>
-            <label for="terminos">Acepto los términos y condiciones</label>
-          </div>
-
-          <div class="boton-contenedor">
-            <button type="submit">ENVIAR</button>
-          </div>
-        </form>
+            <div class="boton-contenedor">
+              <button type="submit">ENVIAR</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </main>
