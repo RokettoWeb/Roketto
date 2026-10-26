@@ -1,0 +1,66 @@
+# Recordatorio para el equipo: hacer git pull y git push de su rama.
+#
+# Se ejecuta del martes 27 al viernes 30 de octubre de 2026 a las 8:15 y a las 13:45
+# (hora de España, CET = UTC+1). GitHub solo usa UTC en los cron, por eso 7:15 y 12:45.
+# Cada ejecución comenta en el issue "Recordatorio: git pull y git push" mencionando
+# a todo el equipo, y GitHub les avisa por notificación y correo.
+#
+# Los usuarios avisados son los colaboradores del repositorio. Para cambiarlos sin tocar
+# este archivo, crea la variable TEAM_USERS del repositorio
+# (Settings -> Secrets and variables -> Actions -> Variables), separados por espacios.
+
+name: Recordatorio pull/push
+
+on:
+  schedule:
+    - cron: '15 7 27-30 10 *'
+    - cron: '45 12 27-30 10 *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  recordatorio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        env:
+          TEAM_USERS: ${{ vars.TEAM_USERS || 'olatzglez avsmr23sl-cpu Danner1029 onesun-xia adrianrodriguezdaw' }}
+        with:
+          script: |
+            // El cron se repetiría cada año los mismos días; solo vale para esta semana.
+            if (context.eventName === 'schedule' && new Date().getUTCFullYear() !== 2026) return;
+
+            const users = (process.env.TEAM_USERS || '').split(/[\s,]+/).filter(Boolean);
+            if (!users.length) {
+              core.setFailed('La variable TEAM_USERS está vacía.');
+              return;
+            }
+
+            const title = 'Recordatorio: git pull y git push';
+            const { owner, repo } = context.repo;
+            const issues = await github.paginate(github.rest.issues.listForRepo, { owner, repo, state: 'open' });
+            let issue = issues.find(i => i.title === title && !i.pull_request);
+            if (!issue) {
+              issue = (await github.rest.issues.create({
+                owner, repo, title,
+                body: 'Issue para los recordatorios diarios de sincronizar cada uno su rama con GitHub.',
+              })).data;
+            }
+
+            const hora = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid', hour: '2-digit', minute: '2-digit' });
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: issue.number,
+              body: [
+                `⏰ Recordatorio de las ${hora}: ${users.map(u => '@' + u.replace(/^@/, '')).join(' ')}`,
+                '',
+                'Sincronizad vuestra rama con GitHub:',
+                '```',
+                'git pull',
+                'git add .',
+                'git commit -m "Describe tus cambios"',
+                'git push',
+                '```',
+              ].join('\n'),
+            });
