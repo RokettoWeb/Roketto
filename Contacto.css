@@ -81,7 +81,7 @@ h1 {
     font-size: 2.25em;
     color: #000000;
     margin-bottom: 1em;
-    align-self: flex-start;
+    text-align: center;
 }
 
 .contenedor {
@@ -92,6 +92,7 @@ h1 {
 .subtitulo {
     font-size: 1.25em;
     margin-bottom: 1.25em;
+    text-align: center;
 }
 
 .caja-formulario {
@@ -116,9 +117,6 @@ label {
     font-size: 0.9em;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
 textarea {
     width: 100%;
     padding: 0.5em;
