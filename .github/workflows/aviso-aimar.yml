@@ -1,0 +1,40 @@
+# Aviso a Aimar: hacer git pull de la rama contacto antes de seguir trabajando.
+#
+# Se ejecuta una sola vez, el miércoles 28 de octubre de 2026 a las 8:05
+# (hora de España, CET = UTC+1). GitHub solo usa UTC en los cron, por eso 7:05.
+# Comenta en el issue #1 mencionando a Aimar, y GitHub le avisa por notificación y correo.
+
+name: Aviso pull contacto
+
+on:
+  schedule:
+    - cron: '5 7 28 10 *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  aviso:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            // El cron se repetiría cada año el mismo día; solo vale para 2026.
+            if (context.eventName === 'schedule' && new Date().getUTCFullYear() !== 2026) return;
+
+            const { owner, repo } = context.repo;
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: 1,
+              body: [
+                '⏰ @avsmr23sl-cpu, antes de seguir trabajando en Contacto, trae los últimos cambios de la rama `contacto`:',
+                '',
+                '```',
+                'git switch contacto',
+                'git pull',
+                '```',
+                '',
+                'Se han corregido las rutas de los CSS, se ha movido `footer2.png` a `front/assets/`, se han añadido los iconos del footer y `Contacto.html` ahora se llama `contacto.html`.',
+              ].join('\n'),
+            });
