@@ -22,3 +22,26 @@ Roketto es una empresa de desarrollo web. Este proyecto consiste en crear su pá
 ## Objetivo
 
 Crear una web clara, atractiva y fácil de navegar que transmita la identidad de Roketto y permita a los visitantes conocer sus servicios, proyectos y equipo.
+## Normas para los mensajes de commit
+
+El título del commit (la primera línea del mensaje) tiene que:
+
+- Tener **al menos 15 caracteres**.
+- Usar solo **letras** (con tildes y ñ), **números**, **espacios** y estos signos: `. , : ; - ( ) ¿ ? ¡ !`
+
+Ejemplos:
+
+| Mensaje | ¿Vale? |
+|---|---|
+| `Añadir required al formulario` | ✅ |
+| `¿Funciona el botón? ¡Sí!` | ✅ |
+| `.` | ❌ Demasiado corto |
+| `Arreglar <footer> y #iconos` | ❌ Lleva `<`, `>` y `#` |
+
+**Activa la comprobación en tu ordenador** (una sola vez, dentro de la carpeta del proyecto):
+
+```
+git config core.hooksPath .githooks
+```
+
+A partir de ahí, git rechazará el commit si el mensaje no cumple las normas y te dirá por qué. Además, GitHub revisa los mensajes de cada Pull Request hacia `develop` o `main`: si alguno no cumple, la PR saldrá en rojo y no se podrá unir hasta corregirlo.
