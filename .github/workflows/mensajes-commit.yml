@@ -1,0 +1,61 @@
+# Comprueba los mensajes de los commits de cada PR hacia develop o main.
+# Mismas normas que el hook .githooks/commit-msg, sobre el título (primera línea):
+#   - al menos 15 caracteres
+#   - solo letras (con tildes y ñ), números, espacios y . , : ; - ( ) ¿ ? ¡ !
+# No se comprueban los merges ni los commits anteriores al 28-10-2026,
+# cuando se pusieron estas normas.
+
+name: Mensajes de commit
+
+on:
+  pull_request:
+    branches: [develop, main]
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  mensajes-commit:
+    name: Mensajes de commit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const DESDE = new Date('2026-10-28T00:00:00+01:00');
+            const PERMITIDOS = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 .,:;\-()¿?¡!]+$/;
+
+            const commits = await github.paginate(github.rest.pulls.listCommits, {
+              ...context.repo, pull_number: context.payload.pull_request.number,
+            });
+
+            const errores = [];
+            for (const c of commits) {
+              if (c.parents.length > 1) continue;
+              if (new Date(c.commit.committer.date) < DESDE) continue;
+              const titulo = c.commit.message.split('\n')[0].trim();
+              if (/^(Merge|Revert) /.test(titulo)) continue;
+
+              const problemas = [];
+              const n = [...titulo].length;
+              if (n < 15) problemas.push(`tiene ${n} caracteres (mínimo 15)`);
+              if (!PERMITIDOS.test(titulo)) {
+                const malos = [...new Set([...titulo].filter(ch => !PERMITIDOS.test(ch)))];
+                problemas.push(`caracteres no permitidos: ${malos.join(' ')}`);
+              }
+              if (problemas.length) {
+                errores.push(`${c.sha.slice(0, 7)} "${titulo}" (${c.author?.login || c.commit.author.name}): ${problemas.join('; ')}`);
+              }
+            }
+
+            if (errores.length) {
+              core.setFailed(
+                'Hay commits que no cumplen las normas de los mensajes:\n' + errores.map(e => '  - ' + e).join('\n') +
+                '\n\nUsa al menos 15 caracteres y solo letras, números, espacios y . , : ; - ( ) ¿ ? ¡ !' +
+                '\nPara corregir el último commit: git commit --amend -m "Nuevo mensaje" y git push --force-with-lease'
+              );
+            } else {
+              core.info(`Todos los mensajes cumplen las normas (${commits.length} commits revisados).`);
+            }
