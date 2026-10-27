@@ -7,66 +7,15 @@
     --transicion: all 0.3s ease;
 }
 
-body {
-    padding: 2em;
-    padding-bottom: 15em;
-    background-color: var(--gris-claro);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.header_idioma {
-  display: flex;
-  gap: 8px;
-}
-
-.nav_lista {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    padding-left: 0;
-    gap: 1rem;
-    align-items: center;
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    border: 0;
-}
-
-header a {
-    text-decoration: none;
-}
-
-header a:hover {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.header_logo img {
-    max-width: 48px;
-}
-
 .contacto-principal {
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 2em;
+    padding: 2em;
+    padding-bottom: 15em;
+    background-color: var(--gris-claro);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .contacto-centrado {
@@ -77,19 +26,19 @@ header a:hover {
     max-width: 37.5em;
 }
 
-h1 {
+.contacto-principal h1 {
     font-size: 2.25em;
     color: #000000;
     margin-bottom: 1em;
     text-align: center;
 }
 
-.contenedor {
+.contacto_contenedor {
     width: 100%;
     max-width: 37.5em;
 }
 
-.subtitulo {
+.contacto_subtitulo {
     font-size: 1.25em;
     margin-bottom: 1.25em;
     text-align: center;
@@ -101,36 +50,33 @@ h1 {
     padding: 1.5em;
 }
 
-.fila {
+.contacto_fila {
     display: flex;
     gap: 1em;
 }
 
-.grupo {
+.contacto_grupo {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-bottom: 1em;
 }
 
-label {
+.contacto-principal label {
     font-size: 0.9em;
 }
 
-textarea {
+.contacto-principal textarea {
     width: 100%;
     padding: 0.5em;
     border: 1px solid #000000;
     background-color: #ffffff;
     font-size: 0.9em;
     box-sizing: border-box;
-}
-
-textarea {
     resize: none;
 }
 
-.casilla {
+.contacto_casilla {
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -144,7 +90,7 @@ textarea {
     justify-content: flex-end;
 }
 
-button {
+.contacto-principal button {
     background-color: var(--color-principal);
     color: var(--blanco);
     padding: 0.75em 2.2em;
