@@ -1,0 +1,27 @@
+#!/bin/sh
+# Comprueba el título (primera línea) del mensaje de commit:
+#   - al menos 15 caracteres
+#   - solo letras (con tildes y ñ), números, espacios y . , : ; - ( ) ¿ ? ¡ !
+# Los mensajes automáticos de git (Merge ..., Revert ...) no se comprueban.
+#
+# Para activarlo, una vez en cada ordenador:  git config core.hooksPath .githooks
+
+exec perl -CSD -Mutf8 -e '
+    open my $f, "<:encoding(UTF-8)", $ARGV[0] or exit 0;
+    my $titulo = "";
+    while (<$f>) { chomp; s/\r$//; next if /^#/; next if /^\s*$/; $titulo = $_; last; }
+    exit 0 if $titulo =~ /^(Merge|Revert) /;
+
+    my @errores;
+    my $n = length $titulo;
+    push @errores, "Debe tener al menos 15 caracteres (tiene $n)." if $n < 15;
+    my %malos = map { $_ => 1 } grep { !/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 .,:;\-()¿?¡!]/ } split //, $titulo;
+    push @errores, "Tiene caracteres no permitidos: " . join(" ", sort keys %malos) if %malos;
+    exit 0 unless @errores;
+
+    print STDERR "\n✗ Commit rechazado: \"$titulo\"\n";
+    print STDERR "  - $_\n" for @errores;
+    print STDERR "\n  Usa al menos 15 caracteres y solo letras, números, espacios y . , : ; - ( ) ¿ ? ¡ !\n";
+    print STDERR "  Ejemplo: git commit -m \"Añadir required al formulario\"\n\n";
+    exit 1;
+' "$1"
