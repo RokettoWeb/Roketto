@@ -100,7 +100,7 @@
     cursor: pointer;
 }
 
-footer {
+.contacto_footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -113,10 +113,10 @@ footer {
     flex-wrap: wrap;
     gap: 1rem;
     background-color: var(--color-principal);
-    background-image: url(assets/footer2.png);
+    background-image: url(/front/assets/footer2.png);
 }
 
-footer p {
+.contacto_footer p {
     color: var(--gris-claro);
     margin: 0;
 }
@@ -127,25 +127,11 @@ footer p {
     align-items: center;
 }
 
-#ins {
-    max-width: 40px;
-    max-height: 40px;
-    width: auto;
-    height: auto;
-}
-
-#youtube {
-    max-width: 48px;
-    max-height: 45px;
-    width: auto;
-    height: auto;
-}
-
+#ins,
+#youtube,
 #x {
-    max-width: 48px;
-    max-height: 45px;
-    width: auto;
-    height: auto;
+    width: 32px;
+    height: 32px;
 }
 
 .footer-links {
