@@ -1,14 +1,14 @@
 # Aviso a Aimar: hacer git pull de la rama contacto antes de seguir trabajando.
 #
-# Se ejecuta una sola vez, el miércoles 28 de octubre de 2026 a las 8:05
-# (hora de España, CET = UTC+1). GitHub solo usa UTC en los cron, por eso 7:05.
+# Se ejecuta una sola vez, el miércoles 28 de octubre de 2026 a las 8:00
+# (hora de España, CET = UTC+1). GitHub solo usa UTC en los cron, por eso 7:00.
 # Comenta en el issue #1 mencionando a Aimar, y GitHub le avisa por notificación y correo.
 
 name: Aviso pull contacto
 
 on:
   schedule:
-    - cron: '5 7 28 10 *'
+    - cron: '0 7 28 10 *'
   workflow_dispatch:
 
 permissions:
