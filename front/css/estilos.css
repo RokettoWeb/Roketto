@@ -1,0 +1,358 @@
+/*
+ * ESTILOS DE ROKETTO
+ *
+ * Integra en un solo archivo los estilos que había repartidos por las ramas:
+ *   - styles.css      (rama equipo)    -> base y accesibilidad
+ *   - components.css  (rama equipo)    -> header y página de equipo (Olatz)
+ *   - Contacto.css    (rama contacto)  -> página de contacto y footer (Aimar)
+ *
+ * Las reglas se han copiado sin cambiar sus valores. Los puntos que el equipo
+ * tiene que decidir están marcados con "PENDIENTE".
+ */
+
+
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+:root {
+    /* Texto (styles.css) */
+    --color-text: #000000;
+
+    /* Paleta del header y equipo (components.css) */
+    --red: #BF1140;
+    --black: #0A0D0B;
+    --white: #FFFFFF;
+    --lightgrey: #F2F2F2;
+    --grey: #808080;
+
+    /* Paleta de contacto (Contacto.css) */
+    --color-principal: #7B0A0A;
+    --color-principal-hover: #a31212;
+    --blanco: #FFFFFF;
+    --gris-claro: #f1f1f1;
+    --radio-grande: 16px;
+    --transicion: all 0.3s ease;
+
+    /* PENDIENTE: hay dos rojos distintos (--red #BF1140 y --color-principal #7B0A0A)
+       y variables repetidas (--white / --blanco, --lightgrey / --gris-claro).
+       Conviene elegir una sola paleta y usar los mismos nombres en toda la web. */
+}
+
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+p {
+    color: var(--color-text);
+}
+
+
+/* ==========================================================================
+   ACCESIBILIDAD
+   Texto oculto a la vista pero que leen los lectores de pantalla.
+   PENDIENTE: .sr y .sr-only hacen lo mismo; conviene quedarse con una.
+   ========================================================================== */
+
+.sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+}
+
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100vh; /* PENDIENTE: 100vh es el alto de la pantalla; probablemente debería ser 100% o 100vw */
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.header_idioma {
+    display: flex;
+    gap: 8px;
+}
+
+.nav_lista {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-left: 0;
+    gap: 1rem;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.header_logo img {
+    max-width: 48px;
+}
+
+
+/* ==========================================================================
+   COMPONENTES COMUNES
+   ========================================================================== */
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    height: 100%;
+}
+
+
+/* ==========================================================================
+   PÁGINA DE EQUIPO
+   ========================================================================== */
+
+.article_equipo {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card_equipo {
+    max-width: 400px;
+    max-height: 500px;
+    min-height: 280px;
+}
+
+.card_equipo h2,
+.card_equipo h3,
+.card_equipo h4,
+.card_equipo p {
+    margin: 0;
+    padding: 0;
+}
+
+.card_imagen {
+    width: 10em;
+    height: 10em;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.card_contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 250px;
+}
+
+ul.miembro_redes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 0.5em;
+}
+
+ul.miembro_redes li a {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5em;
+    align-items: center;
+}
+
+ul.miembro_redes img {
+    width: 2em;
+    height: 2em;
+}
+
+
+/* ==========================================================================
+   PÁGINA DE CONTACTO
+   ========================================================================== */
+
+.contacto-principal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2em;
+    padding: 2em;
+    padding-bottom: 15em;
+    background-color: var(--gris-claro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contacto-centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 37.5em;
+}
+
+.contacto-principal h1 {
+    font-size: 2.25em;
+    color: #000000;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.contacto_contenedor {
+    width: 100%;
+    max-width: 37.5em;
+}
+
+.contacto_subtitulo {
+    font-size: 1.25em;
+    margin-bottom: 1.25em;
+    text-align: center;
+}
+
+.caja-formulario {
+    background-color: #fff;
+    border: 1px solid #000000;
+    padding: 1.5em;
+}
+
+.contacto_fila {
+    display: flex;
+    gap: 1em;
+}
+
+.contacto_grupo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.contacto-principal label {
+    font-size: 0.9em;
+}
+
+.contacto-principal textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.contacto_casilla {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.25em;
+    font-size: 0.9em;
+    text-decoration: underline;
+}
+
+.boton-contenedor {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contacto-principal button {
+    background-color: var(--color-principal);
+    color: var(--blanco);
+    padding: 0.75em 2.2em;
+    font-size: 0.9em;
+    border-radius: 1.2em;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   FOOTER
+   PENDIENTE: ahora solo lo usa contacto (.contacto_footer). Si el footer va a
+   ser el mismo en todas las páginas, conviene renombrarlo a .footer.
+   ========================================================================== */
+
+.contacto_footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em 1.5em;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--color-principal);
+    background-image: url(/front/assets/footer2.png);
+}
+
+.contacto_footer p {
+    color: var(--gris-claro);
+    margin: 0;
+}
+
+#iconos {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+#ins,
+#youtube,
+#x {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-links p {
+    margin: 0;
+}
+
+a.final {
+    padding: 0;
+    background: transparent;
+    color: var(--gris-claro);
+    text-decoration: underline;
+    transition: var(--transicion);
+    font-size: 0.85em;
+}
