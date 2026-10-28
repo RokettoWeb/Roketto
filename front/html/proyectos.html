@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos - Roketto</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    /* Barra de navegación de la página (sin la barra del navegador) */
+    .navbar {
+      min-height: 54px;
+      padding: 8px 4.8%;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      border-bottom: 1px solid #aaa;
+    }
+
+    /* Sustituye este bloque por una imagen real si tienes el logo */
+    .logo {
+      width: 60px;
+      height: 60px;
+      flex: 0 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex: 1;
+    }
+
+    .nav-links a {
+      color: #171717;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .nav-links a.active {
+      font-weight: 700;
+    }
+
+    .language {
+      background: white;
+      border: 1px solid #888;
+      border-radius: 2px;
+      padding: 2px 6px;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 28px 4.8% 60px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .breadcrumb {
+      font-size: 18px;
+      margin-bottom: 26px;
+    }
+
+    .breadcrumb a,
+    .project-card a {
+      color: #0065a8;
+    }
+
+    .intro {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px 20px;
+    }
+
+    .project-card {
+      min-height: 216px;
+      padding: 8px 12px 14px;
+      border: 1px solid #888;
+      background: #dedede;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-card:nth-child(even) {
+      background: #f0f0f0;
+    }
+
+    .project-card h2 {
+      font-size: 29px;
+      line-height: 1.25;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 14px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .project-card a {
+      font-size: 12px;
+      margin-top: auto;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      min-width: 156px;
+      padding: 9px 18px;
+      border: 1px solid #555;
+      border-radius: 24px;
+      background: #fff;
+      color: #111;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .btn-dark {
+      background: #303030;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        gap: 18px;
+        padding-inline: 4%;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      main {
+        padding-inline: 4%;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .logo {
+        width: 60px;
+        flex-basis: 60px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .language {
+        margin-left: auto;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: 175px;
+      }
+
+      .project-card h2 {
+        font-size: 24px;
+      }
+
+      .actions {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav_lista">
+        <li>
+          <a href="index.html" class="header_logo">
+            <img src="/front/assets/logo.png" alt="Roketto – Inicio">
+          </a>
+        </li>
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="proyectos.html" aria-current="page">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="header_idioma">
+      <label for="idioma" class="sr">Idioma</label>
+      <select name="idioma" id="idioma">
+        <option value="espanol" lang="es">Español</option>
+        <option value="euskera" lang="eu">Euskera</option>
+        <option value="english" lang="en">English</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <h1>Proyectos</h1>
+    <nav class="breadcrumb" aria-label="Migas de pan">
+      <ul>
+        <li><a href="index.html">Roketto</a></li>
+        <li aria-current="page">Proyectos</li>
+      </ul>
+    </nav>
+
+    <p class="intro">Estos son algunos de los proyectos que hemos desarrollado.</p>
+
+    <section class="projects-grid" aria-label="Lista de proyectos">
+      <article class="project-card">
+        <h2>SignaTour</h2>
+        <p>Aplicación Full Stack de itinerarios culturales accesibles para personas sordas o con discapacidad auditiva. Muestra rutas por museos, calles y monumentos con recursos como Lengua de Signos Española, subtítulos, signoguías o bucle magnético, e incluye inicio de sesión con roles de usuario y administrador.</p>
+        <a href="https://github.com/olatzglez/SignaTour">Ver proyecto</a>
+      </article>
+
+      <article class="project-card">
+        <h2>EcoFestival Bilbao 2024</h2>
+        <p>Desarrollo de la plataforma web oficial para la gestión de residuos y brigadas de voluntariado durante el festival de música. Logramos coordinar a más de 120 voluntarios divididos en 4 zonas del recinto, recogiendo más de 2 toneladas de plástico para su posterior reciclaje.</p>
+        <a href="#">Ver proyecto</a>
+      </article>
+
+      <article class="project-card">
+        <h2>Dragones y Mazorcas</h2>
+        <p>Buscador y comparador de juegos de mesa que consulta la API de BoardGameGeek, con más de 100.000 títulos. Permite buscar, filtrar por jugadores, edad o duración, guardar favoritos, compararlos en una tabla y exportarlos a PDF o CSV, todo sin recargar la página y con modo oscuro.</p>
+        <a href="https://github.com/olatzglez/Dragones_y_Mazorcas">Ver proyecto</a>
+      </article>
+
+      <article class="project-card">
+        <h2>Maratón Verde Donostia</h2>
+        <p>Diseño e implementación de un sistema de seguimiento por tramos para la limpieza de la carrera. La aplicación permitió asignar a los voluntarios puntos de control específicos a lo largo de los 42 km del recorrido para la retirada rápida de vasos y envases de avituallamiento.</p>
+        <a href="#">Ver proyecto</a>
+      </article>
+
+      <article class="project-card">
+        <h2>Brigadas Azules - Costa Vasca</h2>
+        <p>Plataforma de coordinación para grupos de empresas y escuelas orientada a la recogida de microplásticos en playas tras eventos acuáticos. Incluyó un panel de control interactivo donde cada brigada puede registrar los kilos de basura retirados.</p>
+        <a href="#">Ver proyecto</a>
+      </article>
+
+      <article class="project-card">
+        <h2>ZeroWaste San Mamés</h2>
+        <p>Proyecto piloto para la organización del voluntariado exprés tras encuentros deportivos. La web permitió distribuir a los equipos de limpieza por sectores de gradas al finalizar el partido, reduciendo el tiempo de recogida en un 40%.</p>
+        <a href="#">Ver proyecto</a>
+      </article>
+    </section>
+
+    <div class="actions">
+      <a class="btn" href="equipo.html">¡Conócenos!</a>
+      <a class="btn btn-dark" href="contacto.html">¡Te ayudamos!</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="copyright">
+      <p>© 2026 Roketto - Todos los derechos reservados</p>
+    </div>
+    <div id="iconos">
+      <a href="https://www.instagram.com/rokettotaldea/"><img src="/front/assets/instagram.svg" alt="Instagram" id="ins" loading="lazy"></a>
+      <a href="https://youtube.com/@rokettotaldea?si=IT-pe8gwuVvj0Im-"><img src="/front/assets/youtube.svg" alt="YouTube" id="youtube" loading="lazy"></a>
+      <a href="https://x.com/R0k3tt0"><img src="/front/assets/x.svg" alt="X (Twitter)" id="x" loading="lazy"></a>
+    </div>
+    <div class="footer-links">
+      <p><a href="aviso-legal.html" class="final">Aviso Legal</a></p>
+      <p><a href="politica-privacidad.html" class="final">Política de privacidad</a></p>
+      <p><a href="politica-cookies.html" class="final">Política de cookies</a></p>
+    </div>
+  </footer>
+</body>
+</html>
