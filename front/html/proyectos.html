@@ -218,21 +218,28 @@
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <a class="logo" href="index.html" aria-label="Inicio de Roketto">
-        <img src="/front/assets/logo.png" alt="Logo Roketto">
-        </a>
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="equipo.html"><strong>Equipo</strong></a>
-      <a href="proyectos.html" class="active" aria-current="page">Proyectos</a>
-      <a href="contacto.html"><strong>Contacto</strong></a>
+  <header class="header">
+    <nav class="nav" aria-label="Navegación principal">
+      <ul class="nav_lista">
+        <li>
+          <a href="index.html" class="header_logo">
+            <img src="/front/assets/logo.png" alt="Roketto – Inicio">
+          </a>
+        </li>
+        <li><a href="equipo.html">Equipo</a></li>
+        <li><a href="proyectos.html" aria-current="page">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
 
-    <select class="language" aria-label="Seleccionar idioma">
-      <option value="es">ES</option>
-      <option value="eu">EU</option>
-      <option value="en">EN</option>
-    </select>
+    <div class="header_idioma">
+      <label for="idioma" class="sr">Idioma</label>
+      <select name="idioma" id="idioma">
+        <option value="espanol" lang="es">Español</option>
+        <option value="euskera" lang="eu">Euskera</option>
+        <option value="english" lang="en">English</option>
+      </select>
+    </div>
   </header>
 
   <main>
