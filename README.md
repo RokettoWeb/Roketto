@@ -15,13 +15,18 @@ Roketto es una empresa de desarrollo web. Este proyecto consiste en crear su pá
 
 - Adrián Rodríguez
 - Aimar Valiño
-- Danner Valladares
+- Danner Balladares
 - Wangzhan Xia
 - Olatz González
 
 ## Objetivo
 
 Crear una web clara, atractiva y fácil de navegar que transmita la identidad de Roketto y permita a los visitantes conocer sus servicios, proyectos y equipo.
+
+## Licencia de iconos
+
+Los iconos de LinkedIn, GitHub, email, Instagram, YouTube y X (`front/assets/linkedin.svg`, `github.svg`, `email.svg`, `instagram.svg`, `youtube.svg` y `x.svg`) son de [Bootstrap Icons](https://icons.getbootstrap.com/) y se usan bajo la [licencia MIT](https://github.com/twbs/icons/blob/main/LICENSE).
+
 ## Normas para los mensajes de commit
 
 El título del commit (la primera línea del mensaje) tiene que:
