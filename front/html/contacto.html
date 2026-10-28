@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Roketto</title>
+  <link rel="stylesheet" href="/front/css/components.css">
+  <link rel="stylesheet" href="/front/css/Contacto.css">
+</head>
+<body>
+
+  <header class="header">
+        <nav class="nav" aria-label="Navegación principal">
+            <ul class="nav_lista">
+                <li>
+                    <a href="index.html" class="header_logo">
+                        <img src="/front/assets/logo.png" alt="Roketto – Inicio"/>
+                    </a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header_idioma">
+            <label for="idioma" class="sr-only">Idioma</label>
+            <select name="idioma" id="idioma">
+                <option value="espanol" lang="es">Español</option>
+                <option value="euskera" lang="eu">Euskera</option>
+                <option value="english" lang="en">English</option>
+            </select>
+        </div>
+    </header>
+
+  <main class="contacto-principal">
+    <div class="contacto-centrado">
+      <h1>Contacto</h1>
+
+      <div class="contacto_contenedor">
+        <h2 class="contacto_subtitulo">¿Tienes algún proyecto en mente? ¡Pregúntanos!</h2>
+
+        <div class="caja-formulario">
+          <form>
+            <p class="contacto_aviso">Los campos marcados con * son obligatorios.</p>
+
+            <div class="contacto_fila">
+              <div class="contacto_grupo">
+                <label for="nombre">Nombre*</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+              <div class="contacto_grupo">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido">
+              </div>
+            </div>
+            <div class="contacto_fila">
+              <div class="contacto_grupo">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="contacto_grupo">
+                <label for="telefono">Teléfono*</label>
+                <input type="tel" id="telefono" name="telefono" required>
+              </div>
+            </div>
+
+            <div class="contacto_grupo">
+              <label for="asunto">Asunto*</label>
+              <input type="text" id="asunto" name="asunto" required>
+            </div>
+
+            <div class="contacto_grupo">
+              <label for="mensaje">Mensaje*</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+
+            <div class="contacto_casilla">
+              <input type="checkbox" id="privacidad" name="privacidad" required>
+              <label for="privacidad">He leído y acepto la <a href="politica-privacidad.html">política de privacidad</a></label>
+            </div>
+
+            <div class="boton-contenedor">
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="copyright">
+            <p>© 2026 Roketto - Todos los derechos reservados</p>
+        </div>
+        <div id="iconos">
+            <a href="https://www.instagram.com/rokettotaldea/"><img src="/front/assets/instagram.svg" alt="Instagram" id="ins" loading="lazy"></a>
+            <a href="https://youtube.com/@rokettotaldea?si=IT-pe8gwuVvj0Im-"><img src="/front/assets/youtube.svg" alt="YouTube" id="youtube" loading="lazy"></a>
+            <a href="https://x.com/R0k3tt0"><img src="/front/assets/x.svg" alt="X (Twitter)" id="x" loading="lazy"></a>
+        </div>
+        <div class="footer-links">
+            <p><a href="aviso-legal.html" class="final">Aviso Legal</a></p>
+            <p><a href="politica-privacidad.html" class="final">Política de privacidad</a></p>
+            <p><a href="politica-cookies.html" class="final">Política de cookies</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
