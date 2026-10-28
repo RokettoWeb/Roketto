@@ -15,7 +15,7 @@ Roketto es una empresa de desarrollo web. Este proyecto consiste en crear su pá
 
 - Adrián Rodríguez
 - Aimar Valiño
-- Danner Valladares
+- Danner Balladares
 - Wangzhan Xia
 - Olatz González
 
