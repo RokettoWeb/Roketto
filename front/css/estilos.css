@@ -253,6 +253,17 @@ iframe:focus-visible,
 }
 
 
+/* FONDO DE LAS PÁGINAS (todas menos Inicio) */
+
+/* Fondo gris claro de lado a lado de la pantalla, aunque el <main> tenga un ancho máximo:
+   la sombra extiende el color a los lados y clip-path la recorta arriba y abajo. */
+.pagina {
+    background-color: var(--gris-claro);
+    box-shadow: 0 0 0 100vmax var(--gris-claro);
+    clip-path: inset(0 -100vmax);
+}
+
+
 /* MIGAS DE PAN */
 
 .breadcrumb {
@@ -802,9 +813,7 @@ ul.miembro_redes img {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 2em;
     padding: 2em 1em;
-    background-color: var(--gris-claro);
 }
 
 .contacto-centrado {
