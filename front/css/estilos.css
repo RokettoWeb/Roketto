@@ -816,6 +816,10 @@ ul.miembro_redes img {
     padding: 2em 1em;
 }
 
+.contacto-principal.pagina {
+    margin-top: 0;
+}
+
 .contacto-centrado {
     display: flex;
     flex-direction: column;
