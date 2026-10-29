@@ -714,13 +714,6 @@ ul.miembro_redes img {
     color: var(--color-principal);
 }
 
-/* Proyectos de ejemplo sin página propia: texto, no enlace */
-.project-card_pronto {
-    margin-top: auto;
-    font-style: italic;
-    color: var(--gris);
-}
-
 .actions {
     display: flex;
     flex-wrap: wrap;
