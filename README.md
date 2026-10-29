@@ -4,12 +4,22 @@
 
 Roketto es una empresa de desarrollo web. Este proyecto consiste en crear su página web corporativa para presentar la empresa, mostrar sus proyectos y facilitar el contacto con posibles clientes.
 
+Forma parte del **Reto 1 *Limpia el futuro / Etorkizuna garbitzen*** del C.F.G.S. Desarrollo de Aplicaciones Web (1.º DAW).
+
+## Ver la web
+
+👉 **https://olatzglez.github.io/Roketto/**
+
+La web se publica con GitHub Pages a partir de la rama `develop` y se actualiza sola cada vez que se une un cambio a esa rama.
+
 ## Secciones de la web
 
-- **Inicio:** presenta Roketto y explica qué hace la empresa.
-- **Proyectos:** muestra una selección de trabajos y soluciones web desarrolladas por el equipo.
+- **Inicio** (español e inglés): presenta Roketto con un vídeo de fondo y da acceso al resto de secciones.
 - **Equipo:** da a conocer a las personas que forman parte de Roketto y sus perfiles profesionales.
-- **Contacto:** ofrece la información y los medios necesarios para que clientes y colaboradores puedan ponerse en contacto con la empresa.
+- **Proyectos:** muestra una selección de trabajos y soluciones web desarrolladas por el equipo.
+- **Contacto:** formulario para que clientes y colaboradores puedan ponerse en contacto con la empresa.
+- **Trabaja con nosotros** (español e inglés): vídeo de presentación en inglés y acceso a Contacto.
+- **Páginas legales** (español e inglés): aviso legal, política de privacidad y política de cookies.
 
 ## Integrantes
 
@@ -22,6 +32,41 @@ Roketto es una empresa de desarrollo web. Este proyecto consiste en crear su pá
 ## Objetivo
 
 Crear una web clara, atractiva y fácil de navegar que transmita la identidad de Roketto y permita a los visitantes conocer sus servicios, proyectos y equipo.
+
+## Estructura del proyecto
+
+```
+Roketto/
+├── index.html            Página de entrada: lleva a front/html/index.html
+├── front/
+│   ├── html/             Páginas de la web (una por sección, más las versiones en inglés)
+│   ├── css/estilos.css   Hoja de estilos única de toda la web
+│   ├── js/inicio.js      Vídeo de fondo de Inicio (respeta "reducir movimiento")
+│   └── assets/           Imágenes, iconos y vídeo
+├── docs/                 Informes diarios del trabajo de cada persona
+├── .githooks/            Comprobación de los mensajes de commit
+└── .github/              Reglas de revisión (CODEOWNERS) y GitHub Actions
+```
+
+Todas las rutas entre archivos son **relativas** (`../css/estilos.css`), así que la web funciona en GitHub Pages, en cualquier servidor y abriendo los HTML con doble clic.
+
+## Cómo trabajamos
+
+- **`main`**: versión final y estable.
+- **`develop`**: donde se junta el trabajo de todos. Es la versión que se publica en la web.
+- **Una rama por tarea**, creada a partir de `develop`. Al terminar, se abre una **Pull Request hacia `develop`**.
+- `main` y `develop` están protegidas: solo se cambian mediante Pull Request y solo Olatz puede aprobarlas y unirlas.
+
+## Accesibilidad
+
+La web sigue las pautas **WCAG 2.2**:
+
+- HTML semántico: `header`, `nav`, `main`, `footer`, `article`, títulos en orden y migas de pan dentro de `<nav>`.
+- Textos alternativos en todas las imágenes y avisos ocultos para los enlaces que se abren en una pestaña nueva.
+- Contraste suficiente en textos y botones, y foco visible al navegar con el teclado.
+- Tamaño mínimo de 24 px en lo que se pulsa.
+- El vídeo de fondo de Inicio no arranca si el sistema tiene activado "reducir movimiento".
+- El vídeo de *Trabaja con nosotros* muestra los subtítulos por defecto.
 
 ## Uso de la IA
 
