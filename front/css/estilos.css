@@ -821,6 +821,7 @@ ul.miembro_redes img {
     justify-content: center;
     width: 100%;
     padding: 2em 1em;
+    margin-top: 0;
 }
 
 .contacto-centrado {
