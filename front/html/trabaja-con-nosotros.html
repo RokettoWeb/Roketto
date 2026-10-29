@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con nosotros - Roketto</title>
+    <link rel="stylesheet" href="/front/css/styles.css">
+    <link rel="stylesheet" href="/front/css/components.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav" aria-label="Navegación principal">
+            <ul class="nav_lista">
+                <li>
+                    <a href="index.html" class="header_logo">
+                        <img src="/front/assets/logo.png" alt="Roketto – Inicio">
+                    </a>
+                </li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header_idioma">
+            <label for="idioma" class="sr">Idioma</label>
+            <select name="idioma" id="idioma">
+                <option value="espanol" lang="es">Español</option>
+                <option value="euskera" lang="eu">Euskera</option>
+                <option value="english" lang="en">English</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <h1>Trabaja con nosotros</h1>
+        <nav class="breadcrumb" aria-label="Migas de pan">
+            <ul>
+                <li><a href="index.html">Roketto</a></li>
+                <li aria-current="page">Trabaja con nosotros</li>
+            </ul>
+        </nav>
+
+        <section class="trabaja" aria-labelledby="trabaja_titulo">
+            <h2 id="trabaja_titulo">Únete a Roketto</h2>
+
+            <div class="trabaja_video">
+                <!-- PENDIENTE: poner el identificador del vídeo de YouTube en lugar de ID_DEL_VIDEO -->
+                <iframe src="https://www.youtube-nocookie.com/embed/ID_DEL_VIDEO"
+                        title="Vídeo: trabaja con nosotros en Roketto"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"></iframe>
+            </div>
+
+            <a href="contacto.html" class="btn trabaja_boton">Contáctanos</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="copyright">
+            <p>© 2026 Roketto - Todos los derechos reservados</p>
+        </div>
+        <div id="iconos">
+            <a href="https://www.instagram.com/rokettotaldea/"><img src="/front/assets/instagram.svg" alt="Instagram" id="ins" loading="lazy"></a>
+            <a href="https://youtube.com/@rokettotaldea?si=IT-pe8gwuVvj0Im-"><img src="/front/assets/youtube.svg" alt="YouTube" id="youtube" loading="lazy"></a>
+            <a href="https://x.com/R0k3tt0"><img src="/front/assets/x.svg" alt="X (Twitter)" id="x" loading="lazy"></a>
+        </div>
+        <div class="footer-links">
+            <p><a href="trabaja-con-nosotros.html" class="final">Trabaja con nosotros</a></p>
+            <p><a href="aviso-legal.html" class="final">Aviso Legal</a></p>
+            <p><a href="politica-privacidad.html" class="final">Política de privacidad</a></p>
+            <p><a href="politica-cookies.html" class="final">Política de cookies</a></p>
+        </div>
+    </footer>
+</body>
+</html>
