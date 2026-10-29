@@ -299,7 +299,7 @@ iframe:focus-visible,
     background-color: var(--negro);
     background-image:
         linear-gradient(rgba(10, 13, 11, 0.85), rgba(10, 13, 11, 0.85)),
-        url(/front/assets/footer2.png);
+        url(../assets/footer2.png);
     background-size: cover;
     background-position: center;
 }
@@ -386,10 +386,9 @@ body.inicio {
 }
 
 .inicio #idioma {
-    max-width: 180px;
-    max-height: 85px;
-    width: auto;
-    height: auto;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .inicio #contenido {
