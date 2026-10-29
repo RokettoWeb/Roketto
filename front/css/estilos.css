@@ -502,32 +502,6 @@ body.inicio {
     color: var(--gris-claro);
 }
 
-.inicio #iconos {
-    display: flex;
-    gap: 14px;
-}
-
-.inicio #ins {
-    max-width: 50px;
-    max-height: 50px;
-    width: auto;
-    height: auto;
-}
-
-.inicio #youtube {
-    max-width: 60px;
-    max-height: 55px;
-    width: auto;
-    height: auto;
-}
-
-.inicio #x {
-    max-width: 65px;
-    max-height: 60px;
-    width: auto;
-    height: auto;
-}
-
 .inicio a.final {
     font-size: 1rem;
 }
