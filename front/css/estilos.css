@@ -360,7 +360,7 @@ iframe:focus-visible,
     color: var(--gris-claro);
     text-decoration: none;
     transition: var(--transicion);
-    font-size: 0.875rem;
+    font-size: 0.9rem;
 }
 
 .footer a.final:hover,
@@ -500,10 +500,6 @@ body.inicio {
 
 .inicio footer p {
     color: var(--gris-claro);
-}
-
-.inicio a.final {
-    font-size: 1rem;
 }
 
 
