@@ -1,7 +1,0 @@
-:root {
-    --color-text: #000000;
-}
-
-p {
-    color: var(--color-text);
-}
